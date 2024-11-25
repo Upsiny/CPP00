@@ -7,7 +7,7 @@ PhoneBook::PhoneBook( void ) {
 
 	std::cout << "PhoneBook Created" << std::endl;
 	for (int i = 0; i < 8; i ++) {
-	pb_tab[i].setIndex(i);
+	pb_tab[i].setIndex(i + 1);
 	pb_tab[i].setFname("");
 	pb_tab[i].setLname("");
 	pb_tab[i].setNname("");
@@ -80,4 +80,3 @@ void	PhoneBook::search() {
 	}
 	pb_tab[index - 1].to_str();
 }
-
