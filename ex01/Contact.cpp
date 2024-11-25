@@ -36,6 +36,30 @@ std::string	resize(std::string str) {
 	return str;
 }
 
+void	Contact::setIndex(int i) {
+	index = i;
+}
+
+void	Contact::setFname(std::string str){
+	f_name = str;
+}
+
+void	Contact::setLname(std::string str){
+	l_name = str;
+}
+
+void	Contact::setNname(std::string str){
+	n_name = str;
+}
+
+void	Contact::setPhone(std::string str){
+	phone = str;
+}
+
+void	Contact::setSecret(std::string str){
+	secret = str;
+}
+
 void	Contact::to_string() {
 	std::cout << std::setw(10) << index << "|";
 	std::cout << std::setw(10) << resize(f_name) << "|";

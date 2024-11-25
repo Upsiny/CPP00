@@ -1,12 +1,22 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook( void ) {
 
-  std::cout << "PhoneBook Created" << std::endl;
-  id = 1;
-  return;
+	std::cout << "PhoneBook Created" << std::endl;
+	for (int i = 0; i < 8; i ++) {
+	pb_tab[i].setIndex(i);
+	pb_tab[i].setFname("");
+	pb_tab[i].setLname("");
+	pb_tab[i].setNname("");
+	pb_tab[i].setPhone("");
+	pb_tab[i].setSecret("");
+
+	}
+	id = 1;
+	return;
 }
 
 PhoneBook::~PhoneBook( void ) {
@@ -27,9 +37,9 @@ bool	isNumber(const std::string s)
 }
 
 void	PhoneBook::work() {
-  std::string action;
+	std::string action;
 
-  while (1) {
+	while (1) {
 		std::cout << "Select between SEARCH, ADD and EXIT\n";
 		std::cin >> action;;
 		if (action == "ADD")
@@ -66,7 +76,7 @@ void	PhoneBook::search() {
 		if (!isNumber(id_sent))
 			std::cout << "Not a number" << std::endl;
 		else
-			index = stoi(id_sent);
+			index = atoi(id_sent.c_str());
 	}
 	pb_tab[index - 1].to_str();
 }
